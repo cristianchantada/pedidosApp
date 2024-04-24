@@ -20,8 +20,8 @@ public class pedido {
     private estado estado;
     @BsonProperty(value = "estado_cobro")
     private estadoCobro estadoCobro;
-    @BsonProperty(value = "camarero")
-    private camarero camareroResponsable;
+    @BsonProperty(value = "camarero_id")
+    private ObjectId camareroId;
     private float importeTotal;
     @BsonProperty(value = "fecha_hora_en_proceso")
     private Date fechaHoraEnProceso;
@@ -33,6 +33,10 @@ public class pedido {
     private List<Date> fechaHoraModificado;
     @BsonProperty(value = "fecha_hora_cancelado")
     private Date fechaHoraCancelado;
+    private bar aBar;
+    private camarero aCamarero;
+    private alumno aAlumno;
+    private grupo aGrupo;
 
     public pedido() {}
 
@@ -101,12 +105,12 @@ public class pedido {
         this.estadoCobro = estadoCobro;
     }
 
-    public camarero getCamareroResponsable() {
-        return camareroResponsable;
+    public ObjectId getCamareroId() {
+        return camareroId;
     }
 
-    public void setCamareroResponsable(camarero camareroResponsable) {
-        this.camareroResponsable = camareroResponsable;
+    public void setCamareroId(ObjectId camareroId) {
+        this.camareroId = camareroId;
     }
 
     public float getImporteTotal() {
@@ -155,5 +159,37 @@ public class pedido {
 
     public void setFechaHoraCancelado(Date fechaHoraCancelado) {
         this.fechaHoraCancelado = fechaHoraCancelado;
+    }
+
+    public bar getBar() {
+        return aBar;
+    }
+
+    public void setBar(bar aBar) {
+        this.aBar = aBar;
+    }
+
+    public camarero getCamarero() {
+        return aCamarero;
+    }
+
+    public void setCamarero(camarero aCamarero) {
+        this.aCamarero = aCamarero;
+    }
+
+    public alumno getAlumno() {
+        return aAlumno;
+    }
+
+    public void setAlumno(alumno aAlumno) {
+        this.aAlumno = aAlumno;
+    }
+
+    public grupo getGrupo() {
+        return aGrupo;
+    }
+
+    public void setGrupo(grupo aGrupo) {
+        this.aGrupo = aGrupo;
     }
 }

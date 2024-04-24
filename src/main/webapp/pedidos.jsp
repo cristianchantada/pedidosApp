@@ -10,6 +10,7 @@ pageEncoding="UTF-8"%>
 <%
 
     List<pedido> pedidosLista = (List<pedido>) request.getAttribute("pedidosLista");
+    String nombreBar = pedidosLista.get(0).getBar().getNombre();
 
 %>
 
@@ -21,7 +22,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <header>
-        <h1> Bar <%= pedidosLista.get(0).getBar().getNombre() %></h1>
+        <h1> Bar <%= nombreBar %></h1>
         <h2>Listado de productos</h2>
     </header>
     <main>
@@ -32,7 +33,6 @@ pageEncoding="UTF-8"%>
                 <th>Grupo</th>
                 <th>Camarero</th>
                 <th>Importe pendiente</th>
-                <th><%=  %></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%>
                 <td><%= aPedido.getFechaHoraPedido() %></td>
                 <td><%= aPedido.getEstado() %></td>
                 <td><%= aPedido.getGrupo().getNombre() %></td>
-                <td><%= aPedido.getCamareroResponsable().getNombre() %></td>
+                <td><%= aPedido.getCamarero().getNombre() %></td>
                 <td> ImportePendiente aquí </td>
             </tr></a>
         <% } %>

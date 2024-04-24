@@ -15,11 +15,14 @@ import java.util.List;
 @WebServlet("/index")
 public class IndexServlet extends HttpServlet {
 
-    DaoInterface<pedido> pedidoDao = new PedidoDao();
-    List<pedido> pedidosLista = pedidoDao.getAll();
+    PedidoDao pedidoDao = new PedidoDao();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<pedido> pedidosLista = pedidoDao.getAll();
+        System.out.println("pedidosLista = " + pedidosLista);
+        resp.getWriter().println(pedidosLista);
+
         req.setAttribute("pedidosLista", pedidosLista);
         getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
     }

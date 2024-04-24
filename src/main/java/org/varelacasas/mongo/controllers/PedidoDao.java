@@ -3,7 +3,7 @@ package org.varelacasas.mongo.controllers;
 import com.mongodb.client.MongoCollection;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
-import org.varelacasas.mongo.models.pedido;
+import org.varelacasas.mongo.models.*;
 import org.varelacasas.mongo.utils.ConexionBaseDatos;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +26,47 @@ public class PedidoDao implements DaoInterface<pedido> {
 
     @Override
     public pedido get(pedido apedido) {
-    return null;
+        return null;
     }
 
     @Override
     public List<pedido> getAll() {
-        return collection.find().into(new ArrayList<pedido>());
+
+        List<pedido> pedidosLista = collection.find().into(new ArrayList<>());
+
+        System.out.println("pedidosLista = " + pedidosLista);
+
+        for(pedido p : pedidosLista){
+
+            BarDao barDao = new BarDao();
+            bar aBar = barDao.getById(p.getBarId());
+            p.setBar(aBar);
+
+            GrupoDao grupoDao = new GrupoDao();
+            grupo aGrupo = grupoDao.getById(p.getGrupoId());
+            p.setGrupo(aGrupo);
+
+            CamareroDao camareroDao = new CamareroDao();
+            camarero aCamarero = camareroDao.getById(p.getCamareroId());
+            p.setCamarero(aCamarero);
+
+            List<consumicion> consumicionesPedidoLista = p.getListaConsumiciones();
+
+            for(consumicion c: consumicionesPedidoLista ){
+                ObjectId alumnoId = c.getAlumnoId();
+                AlumnoDao alumnoDao = new AlumnoDao();
+                alumno aAlumno = alumnoDao.getById(alumnoId);
+                c.setAlumno(aAlumno);
+
+                ObjectId productoId = c.getProductoId();
+                ProductoDao productoDao = new ProductoDao();
+                producto aProducto = productoDao.getById(productoId);
+                c.setProducto(aProducto);
+            }
+        }
+
+        return pedidosLista;
+
     }
 
     @Override
