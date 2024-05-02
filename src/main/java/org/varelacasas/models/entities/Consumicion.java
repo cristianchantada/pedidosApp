@@ -1,25 +1,37 @@
-package org.varelacasas.models;
+package org.varelacasas.models.entities;
 
+import jakarta.persistence.*;
+import org.varelacasas.models.EstadoCobroConsumicion;
+import org.varelacasas.models.entities.Alumno;
+import org.varelacasas.models.entities.Producto;
+
+@Entity
+@Table(name = "consumiciones")
 public class Consumicion {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @OneToOne
     private Alumno alumno;
-    private Producto produto;
+    @OneToOne
+    private Producto producto;
+    @Column(name = "estado_cobro_consumicion")
     private EstadoCobroConsumicion estadoCobroConsumicion;
 
     public Consumicion(){}
 
     public Consumicion(Alumno alumno, Producto producto){
         this.alumno = alumno;
-        this.produto = producto;
+        this.producto = producto;
         this.estadoCobroConsumicion = EstadoCobroConsumicion.PENDIENTE;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -31,12 +43,12 @@ public class Consumicion {
         this.alumno = alumno;
     }
 
-    public Producto getProduto() {
-        return produto;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setProduto(Producto produto) {
-        this.produto = produto;
+    public void setProducto(Producto produto) {
+        this.producto = produto;
     }
 
     public EstadoCobroConsumicion getEstadoCobroConsumicion() {

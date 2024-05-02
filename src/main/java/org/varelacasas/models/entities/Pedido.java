@@ -1,29 +1,34 @@
-package org.varelacasas.models;
+package org.varelacasas.models.entities;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.*;
+import org.varelacasas.models.*;
 import java.util.List;
 
+@Entity
+@Table(name = "pedidos")
 public class Pedido {
 
-    private int id;
-    private LocalDateTime fechaHoraPedido;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private Grupo grupo;
     private Bar bar;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consumicion> listaConsumiciones;
     private Estado estado;
+    @Column(name = "estado_cobro")
     private EstadoCobro estadoCobro;
+    @Column(name = "camarero")
     private Camarero camareroResponsable;
     private float importeTotal;
-    private LocalDateTime fechaHoraEnProceso;
-    private LocalDateTime fechaHoraDespachado;
-    private LocalDateTime fechaHoraCerrado;
-    private List<LocalDateTime> fechaHoraModificado;
-    private LocalDateTime fechaHoraCancelado;
+
+    @Embedded
+    private FechaHorasPedidos fechaHorasPedidos = new FechaHorasPedidos();
 
     public Pedido() {}
 
     public Pedido(Grupo grupo, Bar bar, List<Consumicion> listaConsumiciones) {
-        this.fechaHoraPedido = LocalDateTime.now();
         this.grupo = grupo;
         this.bar = bar;
         this.listaConsumiciones = listaConsumiciones;
@@ -31,20 +36,12 @@ public class Pedido {
         this.estadoCobro = EstadoCobro.NADA;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public LocalDateTime getFechaHoraPedido() {
-        return fechaHoraPedido;
-    }
-
-    public void setFechaHoraPedido(LocalDateTime fechaHoraPedido) {
-        this.fechaHoraPedido = fechaHoraPedido;
     }
 
     public Grupo getGrupo() {
@@ -103,43 +100,11 @@ public class Pedido {
         this.importeTotal = importeTotal;
     }
 
-    public LocalDateTime getFechaHoraEnProceso() {
-        return fechaHoraEnProceso;
+    public FechaHorasPedidos getFechaHorasPedidos() {
+        return fechaHorasPedidos;
     }
 
-    public void setFechaHoraEnProceso(LocalDateTime fechaHoraEnProceso) {
-        this.fechaHoraEnProceso = fechaHoraEnProceso;
-    }
-
-    public LocalDateTime getFechaHoraDespachado() {
-        return fechaHoraDespachado;
-    }
-
-    public void setFechaHoraDespachado(LocalDateTime fechaHoraDespachado) {
-        this.fechaHoraDespachado = fechaHoraDespachado;
-    }
-
-    public LocalDateTime getFechaHoraCerrado() {
-        return fechaHoraCerrado;
-    }
-
-    public void setFechaHoraCerrado(LocalDateTime fechaHoraCerrado) {
-        this.fechaHoraCerrado = fechaHoraCerrado;
-    }
-
-    public List<LocalDateTime> getFechaHoraModificado() {
-        return fechaHoraModificado;
-    }
-
-    public void setFechaHoraModificado(List<LocalDateTime> fechaHoraModificado) {
-        this.fechaHoraModificado = fechaHoraModificado;
-    }
-
-    public LocalDateTime getFechaHoraCancelado() {
-        return fechaHoraCancelado;
-    }
-
-    public void setFechaHoraCancelado(LocalDateTime fechaHoraCancelado) {
-        this.fechaHoraCancelado = fechaHoraCancelado;
+    public void setFechaHorasPedidos(FechaHorasPedidos fechaHorasPedidos) {
+        this.fechaHorasPedidos = fechaHorasPedidos;
     }
 }

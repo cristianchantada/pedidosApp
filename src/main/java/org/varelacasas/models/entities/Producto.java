@@ -1,8 +1,15 @@
-package org.varelacasas.models;
+package org.varelacasas.models.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "productos")
 public class Producto {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(name = "nombre")
     private String nombreProducto;
     private float precio;
 
@@ -13,11 +20,11 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -36,4 +43,6 @@ public class Producto {
     public void setPrecio(float precio) {
         this.precio = precio;
     }
+
+
 }
