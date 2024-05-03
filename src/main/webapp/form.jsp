@@ -21,21 +21,6 @@
     </div>
 
     <div class="row mb-2">
-        <label for="alumno" class="col-form-label col-sm-2">Alumno</label>
-        <div class="col-sm-4">
-            <select name="alumno" id="alumno" class="form-select">
-                <option value="">--- seleccionar ---</option>
-                <c:forEach items="${alumnos}" var="a">
-                    <option value="${a.id}" ${a.id.equals(pedido.alumno.id)? "selected": ""}>${a.nombre}</option>
-                </c:forEach>
-            </select>
-        </div>
-        <c:if test="${errores != null && not empty errores.alumno}">
-              <div style="color:red;">${errores.alumno}</div>
-        </c:if>
-    </div>
-
-    <div class="row mb-2">
         <label for="bar" class="col-form-label col-sm-2">Bar</label>
         <div class="col-sm-4">
             <select name="bar" id="bar" class="form-select">
@@ -51,18 +36,42 @@
     </div>
 
     <div class="row mb-2">
-        <label for="producto" class="col-form-label col-sm-2">Producto</label>
-        <div class="col-sm-4">
-            <select name="producto" id="producto" class="form-select">
-                <option value="">--- seleccionar ---</option>
-                <c:forEach items="${producto}" var="p">
-                    <option value="${p.id}" ${p.id.equals(pedido.listaConsumiciones.producto.id)? "selected": ""}>${p.nombre}</option>
-                </c:forEach>
-            </select>
-        </div>
-        <c:if test="${errores != null && not empty errores.producto}">
-              <div style="color:red;">${errores.producto}</div>
-        </c:if>
+        <c:forEach items="${consumiciones}" var="c">
+
+            <option value="${c.id}" ${c.id.equals(pedido.listaConsumiciones.producto.id)? "selected": ""}>${p.nombre}</option>
+
+            <div class="row mb-2">
+                <label for="producto" class="col-form-label col-sm-2">Producto</label>
+                <div class="col-sm-4">
+                    <select name="producto" id="producto" class="form-select">
+                        <option value="">--- seleccionar ---</option>
+                        <c:forEach items="${producto}" var="p">
+                            <option value="${p.id}" ${p.id.equals(pedido.listaConsumiciones.producto.id)? "selected": ""}>${p.nombre}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+                <c:if test="${errores != null && not empty errores.producto}">
+                      <div style="color:red;">${errores.producto}</div>
+                </c:if>
+            </div>
+
+            <div class="row mb-2">
+                <label for="alumno" class="col-form-label col-sm-2">Alumno</label>
+                <div class="col-sm-4">
+                    <select name="alumno" id="alumno" class="form-select">
+                        <option value="">--- seleccionar ---</option>
+                        <c:forEach items="${alumnos}" var="a">
+                            <option value="${a.id}" ${a.id.equals(pedido.alumno.id)? "selected": ""}>${a.nombre}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+                <c:if test="${errores != null && not empty errores.alumno}">
+                      <div style="color:red;">${errores.alumno}</div>
+                </c:if>
+            </div>
+
+
+        </c:forEach>
     </div>
 
     <div class="row mb-2">

@@ -10,16 +10,10 @@ import org.varelacasas.models.entities.*;
 import org.varelacasas.services.*;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @WebServlet("/pedidos/form")
-public class ProductoFormServlet extends HttpServlet {
+public class PedidoFormServlet extends HttpServlet {
 
     @Inject
     private PedidoService pedidoService;
@@ -55,11 +49,15 @@ public class ProductoFormServlet extends HttpServlet {
         List<Grupo> grupos = grupoService.getAll();
         List<Producto> productos = productoService.getAll();
 
+        List<Consumicion> consumiciones = new ArrayList<>();
+        consumiciones.add(new Consumicion());
+
         req.setAttribute("pedido", pedido);
         req.setAttribute("grupos", grupos);
         req.setAttribute("alumnos", alumnos);
         req.setAttribute("bares", bares);
         req.setAttribute("productos", productos);
+        req.setAttribute("consumiciones", consumiciones);
 
         getServletContext().getRequestDispatcher("/form.jsp").forward(req, resp);
     }
