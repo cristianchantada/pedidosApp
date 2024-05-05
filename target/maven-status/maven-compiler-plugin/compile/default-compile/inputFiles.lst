@@ -1,32 +1,52 @@
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\EstadoCobroConsumicion.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\Producto.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\controllers\PedidoDao.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\controllers\BarDao.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\Alumno.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\camarero.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\alumno.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\Grupo.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\EstadoCobro.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\producto.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\controllers\CamareroDao.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\controllers\AlumnoDao.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\pedido.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\controllers\GrupoDao.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\reactive\Main.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\estadoCobroConsumicion.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\Pedido.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\Consumicion.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\grupo.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\estadoCobro.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\controllers\DaoInterface.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\Bar.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\utils\ConexionBaseDatos.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\controllers\DaoInterface.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\estado.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\consumicion.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\controllers\PedidoDao.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\servlets\IndexServlet.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\Camarero.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\controllers\ProductoDao.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\models\Estado.java
-C:\DAW\Bases de datos\Proyecto3EvaluacionDocs\pedidosApp\src\main\java\org\varelacasas\mongo\models\bar.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\entities\Grupo.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\BarRepositoryJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\ProductoService.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\util\initDb.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\Estado.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\entities\Bar.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\entities\Pedido.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\EstadoCobro.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\RepositoryJpa.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\entities\Alumno.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\entities\Camarero.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\controllers\CambiarEstadoPedidoServlet.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\ProductoRepositoryJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\controllers\PedidoFormServlet.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\GrupoRepositoryJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\PedidoRepositoryJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\configs\Repository.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\PedidoServiceJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\CamareroServiceJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\PedidoService.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\controllers\CobrarConsumicionServlet.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\entities\Consumicion.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\ConsumicionServiceJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\controllers\ModificarPedidoServlet.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\FechaHorasPedidos.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\AlumnoServiceJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\ProductoServiceJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\util\JpaUtil.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\EstadoCobroConsumicion.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\ServiceJdbcException.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\BarService.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\CamareroRepositoryJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\filters\ConexionFilter.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\ConsumicionService.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\BarServiceJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\configs\Service.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\CamareroService.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\AlumnoService.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\interceptors\TransactionalJpaInterceptor.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\AlumnoRepositoryJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\RepositoryMongo.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\controllers\PedidosServlet.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\CrudRepositoryInterface.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\GrupoServiceJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\services\GrupoService.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\interceptors\LoggingInterceptor.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\models\entities\Producto.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\controllers\GestionarPedidoServlet.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\configs\ProducerResources.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\repositories\ConsumicionRepositoryJpaImpl.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\interceptors\TransactionalJpa.java
+C:\Users\Usuario\Desktop\pedidosApp\src\main\java\org\varelacasas\interceptors\Logging.java

@@ -2,8 +2,6 @@ package org.varelacasas.models.entities;
 
 import jakarta.persistence.*;
 import org.varelacasas.models.EstadoCobroConsumicion;
-import org.varelacasas.models.entities.Alumno;
-import org.varelacasas.models.entities.Producto;
 
 @Entity
 @Table(name = "consumiciones")
@@ -12,12 +10,17 @@ public class Consumicion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Alumno alumno;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Producto producto;
     @Column(name = "estado_cobro_consumicion")
     private EstadoCobroConsumicion estadoCobroConsumicion;
+
+    @PrePersist
+    public void prePersist(){
+        this.estadoCobroConsumicion = EstadoCobroConsumicion.PENDIENTE;
+    }
 
     public Consumicion(){}
 
@@ -58,4 +61,5 @@ public class Consumicion {
     public void setEstadoCobroConsumicion(EstadoCobroConsumicion estadoCobroConsumicion) {
         this.estadoCobroConsumicion = estadoCobroConsumicion;
     }
+
 }
