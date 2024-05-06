@@ -1,4 +1,4 @@
-package org.varelacasas.interceptors;
+package org.cvarela.interceptors;
 
 import jakarta.interceptor.InterceptorBinding;
 

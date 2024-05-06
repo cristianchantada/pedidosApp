@@ -4,8 +4,8 @@
        version="3.0" bean-discovery-mode="annotated">
 
     <interceptors>
-        <class>org.varelacasas.interceptors.TransactionalJpaInterceptor </class>
-        <!--  <class> org.varelacasas.interceptors.TransactionalMongoInterceptor</class> -->
-          <class>org.varelacasas.interceptors.LoggingInterceptor</class>
+        <class>org.cvarela.interceptors.TransactionalJpaInterceptor</class>
+        <!--  <class> org.cvarela.interceptors.TransactionalMongoInterceptor</class> -->
+          <class>org.cvarela.interceptors.LoggingInterceptor</class>
       </interceptors>
   </beans>

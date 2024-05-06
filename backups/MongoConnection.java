@@ -1,4 +1,4 @@
-package org.varelacasas.configs;
+package org.cvarela.configs;
 
 import jakarta.inject.Qualifier;
 
