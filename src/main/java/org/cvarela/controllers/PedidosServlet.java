@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.cvarela.models.Estado;
 import org.cvarela.models.entities.sql.Camarero;
 import org.cvarela.models.entities.sql.Pedido;
+import org.cvarela.services.ServiceInterface;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,10 +19,10 @@ import java.util.Optional;
 public class PedidosServlet extends HttpServlet {
 
     @Inject
-    private PedidoService service;
+    private ServiceInterface<> service;
 
     @Inject
-    private CamareroService camareroService;
+    private ServiceInterface<> camareroService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

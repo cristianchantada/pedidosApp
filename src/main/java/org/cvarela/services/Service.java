@@ -3,13 +3,14 @@ package org.cvarela.services;
 import java.util.List;
 import java.util.Optional;
 
-public interface ServiceInterface<T> {
+public interface Service {
 
-    List<T> getAll();
+    List getAll();
 
-    Optional<T> get(Integer id);
+    Optional get(Integer id);
 
-    void save(T t);
+    void save(Object o);
 
     void delete(Integer id);
+
 }
