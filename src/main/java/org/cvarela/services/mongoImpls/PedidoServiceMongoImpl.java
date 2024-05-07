@@ -3,18 +3,17 @@ package org.cvarela.services.mongoImpls;
 import jakarta.inject.Inject;
 import org.cvarela.configs.Service;
 import org.cvarela.interceptors.TransactionalMongo;
-import org.cvarela.models.entities.Pedido;
+import org.cvarela.models.entities.mongo.Pedido;
 import org.cvarela.repositories.CrudRepositoryInterface;
 import org.cvarela.repositories.RepositoryJpa;
-import org.cvarela.services.PedidoService;
+import org.cvarela.services.ServiceInterface;
 import org.cvarela.services.ServiceJdbcException;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @TransactionalMongo
-public class PedidoServiceMongoImpl implements PedidoService {
+public class PedidoServiceMongoImpl implements ServiceInterface<Pedido> {
 
     @Inject
     @RepositoryJpa

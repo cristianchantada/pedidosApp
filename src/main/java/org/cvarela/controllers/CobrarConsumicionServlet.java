@@ -11,8 +11,6 @@ import org.cvarela.models.EstadoCobro;
 import org.cvarela.models.EstadoCobroConsumicion;
 import org.cvarela.models.entities.sql.Consumicion;
 import org.cvarela.models.entities.sql.Pedido;
-import org.cvarela.services.ConsumicionService;
-import org.cvarela.services.PedidoService;
 
 import java.io.IOException;
 import java.util.List;

@@ -6,7 +6,7 @@ import org.cvarela.interceptors.TransactionalJpa;
 import org.cvarela.models.entities.sql.Alumno;
 import org.cvarela.repositories.CrudRepositoryInterface;
 import org.cvarela.repositories.RepositoryJpa;
-import org.cvarela.services.AlumnoService;
+import org.cvarela.services.ServiceInterface;
 import org.cvarela.services.ServiceJdbcException;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @TransactionalJpa
-public class AlumnoServiceJpaImpl implements AlumnoService {
+public class AlumnoServiceJpaImpl implements ServiceInterface<Alumno> {
 
     @Inject
     @RepositoryJpa

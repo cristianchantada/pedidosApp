@@ -3,10 +3,10 @@ package org.cvarela.services.mongoImpls;
 import jakarta.inject.Inject;
 import org.cvarela.configs.Service;
 import org.cvarela.interceptors.TransactionalMongo;
-import org.cvarela.models.entities.Grupo;
+import org.cvarela.models.entities.mongo.Grupo;
 import org.cvarela.repositories.CrudRepositoryInterface;
 import org.cvarela.repositories.RepositoryJpa;
-import org.cvarela.services.GrupoService;
+import org.cvarela.services.ServiceInterface;
 import org.cvarela.services.ServiceJdbcException;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @TransactionalMongo
-public class GrupoServiceMongoImpl implements GrupoService {
+public class GrupoServiceMongoImpl implements ServiceInterface<Grupo> {
 
     @Inject
     @RepositoryJpa

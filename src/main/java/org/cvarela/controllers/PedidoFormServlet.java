@@ -19,7 +19,7 @@ public class PedidoFormServlet extends HttpServlet {
     @Inject
     private PedidoService pedidoService;
     @Inject
-    private AlumnoService alumnoService;
+    private ServiceInterface serviceInterface;
     @Inject
     private BarService barService;
     @Inject
@@ -48,7 +48,7 @@ public class PedidoFormServlet extends HttpServlet {
             }
         }
 
-        List<Alumno> alumnos = alumnoService.getAll();
+        List<Alumno> alumnos = serviceInterface.getAll();
         List<Bar> bares = barService.getAll();
         List<Grupo> grupos = grupoService.getAll();
         List<Producto> productos = productoService.getAll();
@@ -167,7 +167,7 @@ public class PedidoFormServlet extends HttpServlet {
 
             Alumno alumno;
             if (alumnoId > 0) {
-                Optional<Alumno> o = alumnoService.get(alumnoId);
+                Optional<Alumno> o = serviceInterface.get(alumnoId);
                 if (o.isPresent()) {
                     alumno = o.get();
                     consumicion.setAlumno(alumno);
@@ -194,7 +194,7 @@ public class PedidoFormServlet extends HttpServlet {
         } else {
             req.setAttribute("errores", errores);
             req.setAttribute("grupos", grupoService.getAll());
-            req.setAttribute("alumnos", alumnoService.getAll());
+            req.setAttribute("alumnos", serviceInterface.getAll());
             req.setAttribute("bares", barService.getAll());
             req.setAttribute("productos", productoService.getAll());
             req.setAttribute("pedido", pedido);

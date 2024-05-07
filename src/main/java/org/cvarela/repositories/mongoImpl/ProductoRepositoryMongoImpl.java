@@ -3,39 +3,38 @@ package org.cvarela.repositories.mongoImpl;
 import com.mongodb.client.MongoCollection;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
-import org.cvarela.models.entities.Camarero;
+import org.cvarela.models.entities.mongo.Producto;
 import org.cvarela.repositories.CrudRepositoryInterface;
-import org.cvarela.utils.ConexionBaseDatos;
+import org.cvarela.util.ConexionBaseDatos;
 
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 
-
-public class CamareroDao implements CrudRepositoryInterface<Camarero> {
+public class ProductoRepositoryMongoImpl implements CrudRepositoryInterface<Producto> {
 
     private final String COLLECTION_NAME = "camareros";
     private final String DATABASE_NAME = "pedidos_app";
-    ConexionBaseDatos<Camarero> conn = new ConexionBaseDatos<>(DATABASE_NAME, COLLECTION_NAME, Camarero.class);
-    MongoCollection<Camarero> collection = conn.getCollection();
+    ConexionBaseDatos<Producto> conn = new ConexionBaseDatos<>(DATABASE_NAME, COLLECTION_NAME, Producto.class);
+    MongoCollection<Producto> collection = conn.getCollection();
 
-    public Camarero getById(ObjectId id){
+    public Producto getById(ObjectId id){
         Bson equalComp = eq("_id", id);
         return collection.find(equalComp).first();
     }
 
     @Override
-    public Camarero get(int id) throws Exception {
+    public Producto get(int id) throws Exception {
         return null;
     }
 
     @Override
-    public List<Camarero> getAll() throws Exception {
+    public List<Producto> getAll() throws Exception {
         return null;
     }
 
     @Override
-    public void save(Camarero camarero) throws Exception {
+    public void save(Producto producto) throws Exception {
 
     }
 

@@ -3,10 +3,10 @@ package org.cvarela.services.mongoImpls;
 import jakarta.inject.Inject;
 import org.cvarela.configs.Service;
 import org.cvarela.interceptors.TransactionalMongo;
-import org.cvarela.models.entities.Alumno;
+import org.cvarela.models.entities.mongo.Alumno;
 import org.cvarela.repositories.CrudRepositoryInterface;
 import org.cvarela.repositories.RepositoryMongo;
-import org.cvarela.services.AlumnoService;
+import org.cvarela.services.ServiceInterface;
 import org.cvarela.services.ServiceJdbcException;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @TransactionalMongo
-public class AlumnoServiceMongoImpl implements AlumnoService {
+public class AlumnoServiceMongoImpl implements ServiceInterface<Alumno> {
 
     @Inject
     @RepositoryMongo

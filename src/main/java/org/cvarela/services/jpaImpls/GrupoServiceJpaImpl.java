@@ -6,7 +6,7 @@ import org.cvarela.interceptors.TransactionalJpa;
 import org.cvarela.models.entities.sql.Grupo;
 import org.cvarela.repositories.CrudRepositoryInterface;
 import org.cvarela.repositories.RepositoryJpa;
-import org.cvarela.services.GrupoService;
+import org.cvarela.services.ServiceInterface;
 import org.cvarela.services.ServiceJdbcException;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @TransactionalJpa
-public class GrupoServiceJpaImpl implements GrupoService {
+public class GrupoServiceJpaImpl implements ServiceInterface<Grupo> {
 
     @Inject
     @RepositoryJpa

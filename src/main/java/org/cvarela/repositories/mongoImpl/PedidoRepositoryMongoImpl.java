@@ -1,24 +1,24 @@
 package org.cvarela.repositories.mongoImpl;
 
+
 import com.mongodb.client.MongoCollection;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
-import org.cvarela.repositories.CrudRepositoryInterface;
-import org.cvarela.utils.ConexionBaseDatos;
-
 import java.util.ArrayList;
 import java.util.List;
-
+import org.cvarela.repositories.CrudRepositoryInterface;
+import org.cvarela.models.entities.mongo.*;
+import org.cvarela.util.ConexionBaseDatos;
 import static com.mongodb.client.model.Filters.eq;
 
-public class PedidoDao implements CrudRepositoryInterface<Pedido> {
+public class PedidoRepositoryMongoImpl implements CrudRepositoryInterface<Pedido> {
 
     private final String COLLECTION_NAME = "pedidos";
     private final String DATABASE_NAME = "pedidos_app";
     ConexionBaseDatos<Pedido> conn = new ConexionBaseDatos<>(DATABASE_NAME, COLLECTION_NAME, Pedido.class);
     MongoCollection<Pedido> collection = conn.getCollection();
 
-    public PedidoDao() {
+    public PedidoRepositoryMongoImpl() {
     }
 
     public Pedido getById(ObjectId id) {
@@ -38,18 +38,18 @@ public class PedidoDao implements CrudRepositoryInterface<Pedido> {
 
         for (Pedido p : pedidosLista) {
 
-            BarDao barDao = new BarDao();
-            Bar aBar = barDao.getById(p.getBarId());
+            BarRepositoryMongoImpl barRepositoryMongoImpl = new BarRepositoryMongoImpl();
+            Bar aBar = barRepositoryMongoImpl.getById(p.getBarId());
             p.setBar(aBar);
 
             System.out.println("aBar = " + aBar);
 
-            GrupoDao grupoDao = new GrupoDao();
-            Grupo aGrupo = grupoDao.getById(p.getGrupoId());
+            GrupoRepositoryMongoImpl grupoRepositoryMongoImpl = new GrupoRepositoryMongoImpl();
+            Grupo aGrupo = grupoRepositoryMongoImpl.getById(p.getGrupoId());
             p.setGrupo(aGrupo);
 
-            CamareroDao camareroDao = new CamareroDao();
-            Camarero aCamarero = camareroDao.getById(p.getCamareroId());
+            RepositoryMongoImpl repositoryMongoImpl = new RepositoryMongoImpl();
+            Camarero aCamarero = repositoryMongoImpl.getById(p.getCamareroId());
             p.setCamareroResponsable(aCamarero);
 
             List<Consumicion> consumicionesPedidoLista = new ArrayList<>();
@@ -58,13 +58,13 @@ public class PedidoDao implements CrudRepositoryInterface<Pedido> {
 
                 for (Consumicion c : consumicionesPedido) {
                     ObjectId alumnoId = c.getAlumnoId();
-                    AlumnoDao alumnoDao = new AlumnoDao();
-                    Alumno aAlumno = alumnoDao.getById(alumnoId);
+                    AlumnoRepositoryMongoImpl alumnoRepositoryMongoImpl = new AlumnoRepositoryMongoImpl();
+                    Alumno aAlumno = alumnoRepositoryMongoImpl.getById(alumnoId);
                     c.setAlumno(aAlumno);
 
                     ObjectId productoId = c.getProductoId();
-                    ProductoDao productoDao = new ProductoDao();
-                    Producto aProducto = productoDao.getById(productoId);
+                    ProductoRepositoryMongoImpl productoRepositoryMongoImpl = new ProductoRepositoryMongoImpl();
+                    Producto aProducto = productoRepositoryMongoImpl.getById(productoId);
                     c.setProducto(aProducto);
                     consumicionesPedidoLista.add(c);
                 }
