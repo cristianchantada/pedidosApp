@@ -7,8 +7,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.cvarela.models.Estado;
-import org.cvarela.models.entities.Camarero;
-import org.cvarela.models.entities.Pedido;
+import org.cvarela.models.entities.sql.Camarero;
+import org.cvarela.models.entities.sql.Pedido;
 import org.cvarela.services.CamareroService;
 import org.cvarela.services.PedidoService;
 

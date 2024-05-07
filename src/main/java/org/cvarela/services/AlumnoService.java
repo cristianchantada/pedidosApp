@@ -1,6 +1,6 @@
 package org.cvarela.services;
 
-import org.cvarela.models.entities.Alumno;
+import org.cvarela.models.entities.sql.Alumno;
 
 import java.util.List;
 import java.util.Optional;

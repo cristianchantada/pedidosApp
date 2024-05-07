@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.cvarela.models.Estado;
-import org.cvarela.models.entities.*;
+import org.cvarela.models.entities.sql.*;
 import org.cvarela.services.*;
 
 import java.io.IOException;

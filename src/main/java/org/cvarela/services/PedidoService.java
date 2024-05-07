@@ -1,6 +1,6 @@
 package org.cvarela.services;
 
-import org.cvarela.models.entities.Pedido;
+import org.cvarela.models.entities.sql.Pedido;
 
 import java.util.List;
 import java.util.Optional;

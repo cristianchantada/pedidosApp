@@ -1,6 +1,6 @@
 package org.cvarela.services;
 
-import org.cvarela.models.entities.Grupo;
+import org.cvarela.models.entities.sql.Grupo;
 
 import java.util.List;
 import java.util.Optional;

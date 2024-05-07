@@ -9,8 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.cvarela.models.Estado;
 import org.cvarela.models.EstadoCobro;
 import org.cvarela.models.EstadoCobroConsumicion;
-import org.cvarela.models.entities.Consumicion;
-import org.cvarela.models.entities.Pedido;
+import org.cvarela.models.entities.sql.Consumicion;
+import org.cvarela.models.entities.sql.Pedido;
 import org.cvarela.services.ConsumicionService;
 import org.cvarela.services.PedidoService;
 

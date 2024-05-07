@@ -1,0 +1,43 @@
+package org.cvarela.repositories.jpaImpl;
+
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import org.cvarela.configs.Repository;
+import org.cvarela.models.entities.sql.Grupo;
+import org.cvarela.repositories.CrudRepositoryInterface;
+import org.cvarela.repositories.RepositoryJpa;
+
+import java.util.List;
+
+@RepositoryJpa
+@Repository
+public class GrupoRepositoryJpaImpl implements CrudRepositoryInterface<Grupo> {
+
+    @Inject
+    private EntityManager em;
+
+    @Override
+    public Grupo get(int id) throws Exception {
+        return em.find(Grupo.class, id);
+    }
+
+    @Override
+    public List<Grupo> getAll() throws Exception {
+        return em.createQuery("SELECT g FROM Grupo g", Grupo.class).getResultList();
+    }
+
+    @Override
+    public void save(Grupo Grupo) throws Exception {
+        if(Grupo.getId() != null && Grupo.getId() > 0){
+            em.merge(Grupo);
+        } else {
+            em.persist(Grupo);
+        }
+    }
+
+    @Override
+    public void delete(int id) throws Exception {
+        em.remove(get(id));
+    }
+
+}

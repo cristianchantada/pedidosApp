@@ -1,6 +1,6 @@
 package org.cvarela.services;
 
-import org.cvarela.models.entities.Camarero;
+import org.cvarela.models.entities.sql.Camarero;
 
 import java.util.List;
 import java.util.Optional;
