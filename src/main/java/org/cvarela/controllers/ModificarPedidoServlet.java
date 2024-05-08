@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.cvarela.models.Estado;
 import org.cvarela.models.entities.sql.Pedido;
+import org.cvarela.services.jpaImpls.PedidoServiceJpaImpl;
+import org.cvarela.services.mongoImpls.PedidoServiceMongoImpl;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,7 +18,10 @@ import java.util.List;
 public class ModificarPedidoServlet extends HttpServlet {
 
     @Inject
-    private PedidoService service;
+    private PedidoServiceJpaImpl service;
+
+    //@Inject
+    //private PedidoServiceMongoImpl service;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

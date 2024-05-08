@@ -11,6 +11,10 @@ import org.cvarela.models.EstadoCobro;
 import org.cvarela.models.EstadoCobroConsumicion;
 import org.cvarela.models.entities.sql.Consumicion;
 import org.cvarela.models.entities.sql.Pedido;
+import org.cvarela.services.jpaImpls.ConsumicionServiceJpaImpl;
+import org.cvarela.services.jpaImpls.PedidoServiceJpaImpl;
+import org.cvarela.services.mongoImpls.ConsumicionServiceMongoImpl;
+import org.cvarela.services.mongoImpls.PedidoServiceMongoImpl;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,9 +24,16 @@ import java.util.Optional;
 public class CobrarConsumicionServlet extends HttpServlet {
 
     @Inject
-    private ConsumicionService consumicionService;
+    private ConsumicionServiceJpaImpl consumicionService;
+
+    //@Inject
+    //private ConsumicionServiceMongoImpl consumicionService;
+
     @Inject
-    private PedidoService pedidoService;
+    private PedidoServiceJpaImpl pedidoService;
+
+    //@Inject
+    //private PedidoServiceMongoImpl pedidoService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

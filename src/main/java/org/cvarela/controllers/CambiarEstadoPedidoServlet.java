@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.cvarela.models.Estado;
 import org.cvarela.models.entities.sql.Pedido;
+import org.cvarela.services.jpaImpls.PedidoServiceJpaImpl;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -16,7 +17,7 @@ import java.util.Optional;
 public class CambiarEstadoPedidoServlet extends HttpServlet {
 
     @Inject
-    private PedidoService service;
+    private PedidoServiceJpaImpl service;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

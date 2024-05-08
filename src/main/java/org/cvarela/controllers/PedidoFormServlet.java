@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.cvarela.models.Estado;
 import org.cvarela.models.entities.sql.*;
 import org.cvarela.services.*;
+import org.cvarela.services.jpaImpls.*;
+import org.cvarela.services.mongoImpls.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -17,16 +19,34 @@ import java.util.*;
 public class PedidoFormServlet extends HttpServlet {
 
     @Inject
-    private PedidoService pedidoService;
-    @Inject
-    private ServiceInterface serviceInterface;
-    @Inject
-    private BarService barService;
-    @Inject
-    private GrupoService grupoService;
-    @Inject
-    private ProductoService productoService;
+    private PedidoServiceJpaImpl pedidoService;
 
+    //@Inject
+    //private PedidoServiceMongoImpl pedidoService;
+
+    @Inject
+    private BarServiceJpaImpl barService;
+
+    //@Inject
+    //private BarServiceMongoImpl barService;
+
+    @Inject
+    private GrupoServiceJpaImpl grupoService;
+
+    //@Inject
+    //private GrupoServiceMongoImpl grupoService;
+
+    @Inject
+    private ProductoServiceJpaImpl productoService;
+
+    //@Inject
+    //private ProductoServiceMongoImpl productoService;
+
+    @Inject
+    private AlumnoServiceJpaImpl alumnoService;
+
+    //@Inject
+    //private AlumnoServiceMongoImpl alumnoService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -48,7 +68,7 @@ public class PedidoFormServlet extends HttpServlet {
             }
         }
 
-        List<Alumno> alumnos = serviceInterface.getAll();
+        List<Alumno> alumnos = alumnoService.getAll();
         List<Bar> bares = barService.getAll();
         List<Grupo> grupos = grupoService.getAll();
         List<Producto> productos = productoService.getAll();
@@ -167,7 +187,7 @@ public class PedidoFormServlet extends HttpServlet {
 
             Alumno alumno;
             if (alumnoId > 0) {
-                Optional<Alumno> o = serviceInterface.get(alumnoId);
+                Optional<Alumno> o = alumnoService.get(alumnoId);
                 if (o.isPresent()) {
                     alumno = o.get();
                     consumicion.setAlumno(alumno);
@@ -194,7 +214,7 @@ public class PedidoFormServlet extends HttpServlet {
         } else {
             req.setAttribute("errores", errores);
             req.setAttribute("grupos", grupoService.getAll());
-            req.setAttribute("alumnos", serviceInterface.getAll());
+            req.setAttribute("alumnos", alumnoService.getAll());
             req.setAttribute("bares", barService.getAll());
             req.setAttribute("productos", productoService.getAll());
             req.setAttribute("pedido", pedido);

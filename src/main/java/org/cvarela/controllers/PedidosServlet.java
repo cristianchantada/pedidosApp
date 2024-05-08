@@ -9,20 +9,26 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.cvarela.models.Estado;
 import org.cvarela.models.entities.sql.Camarero;
 import org.cvarela.models.entities.sql.Pedido;
-import org.cvarela.services.ServiceInterface;
-
+import org.cvarela.services.jpaImpls.CamareroServiceJpaImpl;
+import org.cvarela.services.jpaImpls.PedidoServiceJpaImpl;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet("/pedidos")
+@WebServlet({"/", "/index.html", "/index.jsp"})
 public class PedidosServlet extends HttpServlet {
 
     @Inject
-    private ServiceInterface<> service;
+    private PedidoServiceJpaImpl service;
+
+    //@Inject
+    //private PedidoServiceMongoImpl service;
 
     @Inject
-    private ServiceInterface<> camareroService;
+    private CamareroServiceJpaImpl camareroService;
+
+    //@Inject
+    //private CamareroServiceMongoImpl camareroService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -72,11 +78,8 @@ public class PedidosServlet extends HttpServlet {
             }
         }
 
-
         pedido.setCamareroResponsable(camarero);
-
         resp.sendRedirect(req.getContextPath() + "/gestionar-pedido?id=" + pedido.getId());
-
 
     }
 }
