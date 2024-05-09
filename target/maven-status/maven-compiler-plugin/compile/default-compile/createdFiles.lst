@@ -18,6 +18,7 @@ org\varelacasas\models\EstadoCobroConsumicion.class
 org\varelacasas\services\AlumnoService.class
 org\varelacasas\models\EstadoCobro.class
 org\varelacasas\repositories\AlumnoRepositoryJpaImpl.class
+org\varelacasas\controllers\CobrarConsumicionServlet.class
 org\varelacasas\interceptors\TransactionalJpa.class
 org\varelacasas\interceptors\TransactionalJpaInterceptor.class
 org\varelacasas\models\entities\Producto.class
@@ -26,7 +27,9 @@ org\varelacasas\util\initDb.class
 org\varelacasas\services\GrupoServiceJpaImpl.class
 org\varelacasas\util\JpaUtil.class
 org\varelacasas\models\entities\Camarero.class
+org\varelacasas\services\ConsumicionService.class
 org\varelacasas\repositories\CrudRepositoryInterface.class
+org\varelacasas\services\ConsumicionServiceJpaImpl.class
 org\varelacasas\controllers\GestionarPedidoServlet.class
 org\varelacasas\repositories\PedidoRepositoryJpaImpl.class
 org\varelacasas\models\entities\Consumicion.class
@@ -38,6 +41,7 @@ org\varelacasas\services\ServiceJdbcException.class
 org\varelacasas\services\CamareroServiceJpaImpl.class
 org\varelacasas\services\PedidoServiceJpaImpl.class
 org\varelacasas\services\PedidoService.class
+org\varelacasas\repositories\ConsumicionRepositoryJpaImpl.class
 org\varelacasas\configs\ProducerResources.class
 org\varelacasas\models\FechaHorasPedidos.class
 org\varelacasas\models\entities\Bar.class

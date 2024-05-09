@@ -115,16 +115,15 @@ public class PedidoFormServlet extends HttpServlet {
         }
 
         Integer pedidoId;
-        try {
+        /*try {
             pedidoId = Integer.valueOf(req.getParameter("id"));
         } catch (NumberFormatException e){
             pedidoId = null;
         }
 
         Pedido pedido = new Pedido();
-        pedido.setId(pedidoId);
+        pedido.setId(pedidoId);*/
 
-        /*Integer pedidoId;
         Pedido pedido = new Pedido();
         try {
             pedidoId = Integer.valueOf(req.getParameter("id"));
@@ -136,7 +135,7 @@ public class PedidoFormServlet extends HttpServlet {
             }
         } catch (NumberFormatException e){
             pedido.setId(null);
-        }*/
+        }
 
 
         Grupo grupo;
@@ -182,7 +181,6 @@ public class PedidoFormServlet extends HttpServlet {
                     consumicion.setProducto(producto);
                 }
             }
-
             listaConsumiciones.add(consumicion);
         }
 
