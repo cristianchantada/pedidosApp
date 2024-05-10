@@ -137,7 +137,6 @@ public class PedidoFormServlet extends HttpServlet {
             pedido.setId(null);
         }
 
-
         Grupo grupo;
         if (grupoId > 0) {
             Optional<Grupo> o = grupoService.get(grupoId);
